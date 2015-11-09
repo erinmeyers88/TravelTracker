@@ -3,9 +3,9 @@ angular.module("travelTracker")
 
 		return {
 			restrict: "E",
-			template: "countryListDirective/countryListTemp.html",
+			template: "countryListDirective/countryListTemp.html"
 
-
+			
 	
 
 		};

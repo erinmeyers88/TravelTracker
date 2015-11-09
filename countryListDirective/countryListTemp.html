@@ -17,6 +17,6 @@
 			<span class="centerCountry">{{country.name}}</span>
 			<span class="">{{country.nativeName}}</span>
 			<form>
-				<input type="checkbox" ng-model="visitedOrNot" ng-change="updateVisitedOrNot()">
+				<input type="checkbox" ng-model="visitedOrNot" ng-change="updateVisitedOrNot(country, visitedOrNot)" ng-checked="checkCountry(country)">
 			</form>
 	</ul>

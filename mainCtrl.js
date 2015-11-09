@@ -1,11 +1,10 @@
 angular.module("travelTracker")
-	.controller("mainCtrl",  function ($scope, $state, $rootScope) {
+	.controller("mainCtrl",  function ($scope, $state) {
 		
 		$scope.regions = ["Region", "Africa", "Americas", "Asia", "Europe", "Oceania"];
 	
 		// $scope.selectedRegion = "Region";
 	
-		$rootScope.visitedCountries = [];
 		
 
 			

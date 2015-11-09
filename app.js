@@ -148,7 +148,7 @@ angular.module("travelTracker", ["ui.router"])
 			
 			
 			.state("stats", {
-				
+				url: "/stats",
 				views: {
 					"menu": {
 						templateUrl: "menuBarDirective/menuBarTemp.html",
@@ -156,8 +156,8 @@ angular.module("travelTracker", ["ui.router"])
 					},
 					
 					"content": {
-						url: "/stats",
 						templateUrl: "stats.html",
+						controller: "statsCtrl"
 					}		
 				},
 				
