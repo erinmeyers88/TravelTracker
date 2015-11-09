@@ -1,0 +1,22 @@
+<!--<div >
+	{{country.name}}
+	{{country.nativeName}}
+	
+	
+	subregion
+	
+	population
+	languages
+
+</div>-->
+
+
+
+	<ul ng-repeat="country in region">
+			<i class="material-icons">place</i>
+			<span class="centerCountry">{{country.name}}</span>
+			<span class="">{{country.nativeName}}</span>
+			<form>
+				<input type="checkbox" ng-model="visitedOrNot" ng-change="updateVisitedOrNot()">
+			</form>
+	</ul>

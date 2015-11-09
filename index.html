@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="travelTracker">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Tracker</title>
+  <!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">-->
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+
+  <!--My own CSS-->
+  <link rel="stylesheet" href="style.css">
+
+
+
+
+</head>
+
+
+
+
+<body>
+
+
+  <div ui-view="menu">
+    <menu-bar></menu-bar>
+  </div>
+
+  <div ui-view="content">
+    <country-list></country-list>
+  </div>
+
+  <!--<md-button>Test</md-button>-->
+
+  <!--<md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2 class="md-title">Travel Tracker</h2>
+      <!-- fill up the space between left and right area -->
+      <!--<span flex></span>
+    </div>
+  </md-toolbar>-->
+
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>-->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>-->
+  
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+
+
+
+
+
+
+
+
+
+
+  <script src="app.js"></script>
+  <script src="mainCtrl.js"></script>
+  <script src="countryListDirective/countryListDirective.js"></script>
+  <script src="countriesService.js"></script>
+  <script src="menuBarDirective/menuBarDirective.js"></script>
+
+  <script src="controllers/africaCtrl.js"></script>
+  <script src="controllers/americasCtrl.js"></script>
+  <script src="controllers/asiaCtrl.js"></script>
+  <script src="controllers/europeCtrl.js"></script>
+  <script src="controllers/oceaniaCtrl.js"></script>
+
+</body>
+
+</html>

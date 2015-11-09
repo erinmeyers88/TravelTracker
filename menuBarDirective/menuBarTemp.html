@@ -1,0 +1,13 @@
+<nav>
+	<ul>
+		<div>
+			<form>
+				<select ng-model="selectedRegion" ng-options="region for region in regions" ng-change="onChange()">
+				</select>
+			</form>
+			
+		</div>
+		<div ui-sref="stats">Travel Stats</div>
+		<div ui-sref="map">Map</div>
+	</ul>
+</nav>
