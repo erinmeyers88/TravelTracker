@@ -10,13 +10,13 @@
 
 </div>-->
 
-
-
+<div class="countryList">
 	<ul ng-repeat="country in region">
 			<i class="material-icons">place</i>
 			<span class="centerCountry">{{country.name}}</span>
 			<span class="">{{country.nativeName}}</span>
-			<form>
-				<input type="checkbox" ng-model="visitedOrNot" ng-change="updateVisitedOrNot(country, visitedOrNot)" ng-checked="checkCountry(country)">
-			</form>
+			<input type="checkbox" ng-model="visitedOrNot" ng-change="updateVisitedOrNot(country, visitedOrNot)" ng-checked="checkCountry(country)">	
 	</ul>
+</div>
+
+	

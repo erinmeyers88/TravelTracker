@@ -82,7 +82,7 @@ angular.module("travelTracker").service("countriesService", function ($http, $q)
 			}
 				
 			else {
-				this.visitedCountries.splice(this.visitedCountries.indexOf(country), 1);
+				this.visitedCountries.splice(this.visitedCountries.indexOf(country.name), 1);
 			}
 			
 			return this.visitedCountries;
