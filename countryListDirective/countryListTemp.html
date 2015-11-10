@@ -11,13 +11,14 @@
 </div>-->
 
 <div class="countryList">
-	<ul ng-repeat="country in region">
-			<input type="checkbox" ng-model="visitedOrNot" ng-change="updateVisitedOrNot(country, visitedOrNot)" ng-checked="checkCountry(country)">	
-			<i class="material-icons">place</i>
-			<span class="centerCountry">{{country.name}}</span>
-			<span class="">{{country.nativeName}}</span>
-			
-	</ul>
+	<div ng-repeat="country in region" ng-click="collapse()">
+	<div class="mainCountryListing">
+		<input type="checkbox" ng-model="visitedOrNot" ng-change="updateVisitedOrNot(country, visitedOrNot)" ng-checked="checkCountry(country)">
+		<i class="material-icons">place</i>
+		<span class="centerCountry">{{country.name}}</span>
+		<span class="">{{country.nativeName}}</span>
+	</div>
+	<div class="collapsibleSection" ng-show="collapsed">
+		{{country.population}}
+	</div>
 </div>
-
-	
