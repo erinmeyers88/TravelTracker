@@ -1,53 +1,50 @@
 angular.module("travelTracker")
-  .controller("mapCtrl", function ($scope) {
-      $scope.markerLat = 23.200000;
-      $scope.markerLng = 79.225487;
-      $scope.infoTitle = 'India';
+  .controller("mapCtrl", function ($scope, countriesService) {
+   
+   $scope.visitedCoordinates = countriesService.visitedCoordinates;
+   
+    var mapOptions = {
+      zoom: 2,
+      center: new google.maps.LatLng(27, 0),
+      mapTypeId: google.maps.MapTypeId.TERRAIN
+    }
 
-      var india = new google.maps.LatLng($scope.markerLat, $scope.markerLng);
+    $scope.map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-      var mapOptions = {
-        zoom : 4,
-        center : india,
-        mapTypeId : google.maps.MapTypeId.TERRAIN
-      }
+    $scope.markers = [];
 
-      $scope.map = new google.maps.Map(document.getElementById('map'),
-          mapOptions);
+    var infoWindow = new google.maps.InfoWindow();
 
-      $scope.markers = [];
+    var createMarker = function (lat, lng) {
 
-      var infoWindow = new google.maps.InfoWindow();
+      var marker = new google.maps.Marker({
+        map: $scope.map,
+        position: new google.maps.LatLng(lat, lng),
+        // title: info.city
+      });
+      // marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
 
-      $scope.addMarker = function(lat, lng, title) {
+      google.maps.event.addListener(marker, 'click', function () {
+        infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
+        infoWindow.open($scope.map, marker);
+      });
 
-        var latLang = new google.maps.LatLng(lat, lng);
+      $scope.markers.push(marker);
 
-        var marker = new google.maps.Marker({
-          map : $scope.map,
-          position : latLang,
-          title : title
-        });
-        marker.content = '<div class="infoWindowContent">'
-            + marker.title + '</div>';
+    }
 
-        google.maps.event.addListener(marker, 'click', function() {
-          infoWindow.setContent('<h2>' + marker.title + '</h2>'
-              + marker.content);
-          infoWindow.open($scope.map, marker);
-        });
+    for (i = 0; i < $scope.visitedCoordinates.length; i++) {
+      createMarker($scope.visitedCoordinates[i].lat, $scope.visitedCoordinates[i].lng);
+    }
 
-        $scope.markers.push(marker);
+    $scope.openInfoWindow = function (e, selectedMarker) {
+      e.preventDefault();
+      google.maps.event.trigger(selectedMarker, 'click');
+    }
 
-        $scope.map.setCenter(latLang);
-      };
-      $scope.openInfoWindow = function(e, selectedMarker) {
-        e.preventDefault();
-        google.maps.event.trigger(selectedMarker, 'click');
-      }
 
-      
-    
+
+
   });
 
 

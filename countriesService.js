@@ -8,17 +8,17 @@ angular.module("travelTracker").service("countriesService", function ($http, $q)
 	
 	
 	
-// 	regionsArray.forEach(function(region) {
-// 		this.getRegion[region]  = function () {
-// 		return $http({
-// 			method: "GET",
-// 			url: baseUrl + region,
-// 		}).then(function (responseFromCall) {
-// 			return responseFromCall;
-// 		});
-// 	};
+	// 	regionsArray.forEach(function(region) {
+	// 		this.getRegion[region]  = function () {
+	// 		return $http({
+	// 			method: "GET",
+	// 			url: baseUrl + region,
+	// 		}).then(function (responseFromCall) {
+	// 			return responseFromCall;
+	// 		});
+	// 	};
 
-// });
+	// });
 
 	this.getAfrica = function () {
 		return $http({
@@ -46,7 +46,7 @@ angular.module("travelTracker").service("countriesService", function ($http, $q)
 			return responseFromCall.data;
 		});
 	};
-	
+
 	this.getEurope = function () {
 		return $http({
 			method: "GET",
@@ -67,40 +67,38 @@ angular.module("travelTracker").service("countriesService", function ($http, $q)
 
 	
 	
-//Visited Countries
+	//Visited Countries
 	
 	
 	this.visitedCountries = [];
-	
+
+	this.visitedCoordinates = [];
 	
 	//Adds or deletes county from visitedCountries array when checkbox is changed.		
 		
-		this.updateVisitedOrNot = function (country, visitedOrNot) {
-			console.log(visitedOrNot);
-			if (visitedOrNot === true) {
-				this.visitedCountries.push(country.name);
-			}
-				
-			else {
-				this.visitedCountries.splice(this.visitedCountries.indexOf(country.name), 1);
-			}
-			
-			return this.visitedCountries;
-		};
+	this.updateVisitedOrNot = function (country, visitedOrNot) {
+		console.log(visitedOrNot);
+		if (visitedOrNot === true) {
+			this.visitedCountries.push(country.name);
+			this.visitedCoordinates.push(
+				{
+					country: country.name,
+					lat: country.latlng[0],
+					lng: country.latlng[1]
+				}
+			);
+			console.log(this.visitedCoordinates);
+		}
+
+		else {
+			this.visitedCountries.splice(this.visitedCountries.indexOf(country.name), 1);
+			this.visitedCoordinates.splice(this.visitedCoordinates.indexOf(country), 1);
+		}
+	};
+	// return this.visitedCountries
 		
 
+	//Visited Coordinates
 
-//Map
-
-	this.setMarker = function () {
-		return $http({
-			method: "GET",
-			url: "https://restcountries.eu/rest/v1/region/oceania"
-		}).then(function (responseFromCall) {
-			return responseFromCall.data;
-		});
-	};
-	
-	
 	
 });

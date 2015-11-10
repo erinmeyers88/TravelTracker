@@ -88,8 +88,8 @@ a {
 }
 
 #map {
-  height: 500px;
-  width: 500px;
+  height: 550px;
+  width: 95%;
   box-shadow: 3px 3px 10px gray;
   float: left;
   border: 5px solid white;
