@@ -1,5 +1,5 @@
 angular.module("travelTracker")
-	.controller("mainCtrl",  function ($scope, $state) {
+	.controller("mainCtrl",  function ($scope, $state, $location) {
 		
 		$scope.regions = ["Region", "Africa", "Americas", "Asia", "Europe", "Oceania"];
 	
@@ -16,8 +16,8 @@ angular.module("travelTracker")
 	
 
 	
-		$scope.onChange = function () {
-			$state.go($scope.selectedRegion);
+		$scope.onChange = function (region) {
+			$location.path("/" + region);
 		};
 	
 	});

@@ -20,14 +20,18 @@ angular.module("travelTracker")
 			}
 		};
 
-		$scope.accordion = {
-			current: null
-		};
 
-		$scope.collapsed = true;
 
-		$scope.collapse = function () {
-			$scope.collapsed = !$scope.collapsed;
+		$scope.collapse = function (country) {
+			
+			if (country === $scope.selectedCountry) {
+				$scope.selectedCountry = '';
+			}
+			
+			else {
+				$scope.selectedCountry = country;
+			}
+	
 		};
 
 	});

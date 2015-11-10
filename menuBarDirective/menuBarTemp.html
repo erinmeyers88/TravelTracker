@@ -1,7 +1,7 @@
 <nav>
 	<ul>
 		<div>
-				<select ng-model="selectedRegion" ng-options="region for region in regions" ng-change="onChange()">
+				<select ng-model="selectedRegion" ng-options="region for region in regions" ng-change="onChange(selectedRegion)">
 				</select>
 		</div>
 		<div ui-sref="stats">Travel Stats</div>

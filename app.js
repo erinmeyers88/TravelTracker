@@ -41,7 +41,7 @@ angular.module("travelTracker", ["ui.router", "ngMap"])
 		
 		
 			.state("Africa", {
-				url: "/africa",
+				url: "/Africa",
 				
 				views: {
 					"menu": {
@@ -57,7 +57,7 @@ angular.module("travelTracker", ["ui.router", "ngMap"])
 			})
 			
 			.state("Americas", {
-				url: "/americas",
+				url: "/Americas",
 				
 				views: {
 					"menu": {
@@ -77,7 +77,7 @@ angular.module("travelTracker", ["ui.router", "ngMap"])
 			
 			
 			.state("Asia", {
-				url: "/asia",
+				url: "/Asia",
 				
 				views: {
 					"menu": {
@@ -94,7 +94,7 @@ angular.module("travelTracker", ["ui.router", "ngMap"])
 			
 			
 			.state("Europe", {
-				url: "/europe",
+				url: "/Europe",
 				
 				views: {
 					"menu": {
@@ -112,7 +112,7 @@ angular.module("travelTracker", ["ui.router", "ngMap"])
 			
 			
 			.state("Oceania", {
-				url: "/oceania",
+				url: "/Oceania",
 				
 				views: {
 					"menu": {
