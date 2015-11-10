@@ -1,4 +1,4 @@
-angular.module("travelTracker", ["ui.router", "ngMap"])
+angular.module("travelTracker", ["ui.router"])
 	.config( function($stateProvider, $urlRouterProvider) {
 		
 		$stateProvider
@@ -142,8 +142,10 @@ angular.module("travelTracker", ["ui.router", "ngMap"])
 					"content": {
 						templateUrl: "map.html",
 						controller: "mapCtrl"
+						
 					}		
-				},	
+				},
+					
 			})
 			
 			
