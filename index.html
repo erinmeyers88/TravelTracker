@@ -6,13 +6,13 @@
   <title>Travel Tracker</title>
 
   <!--Angular Material CSS-->
-  <!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">-->
+    <!--<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">-->
 
   <!--Google Material Icons Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!--My own CSS-->
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -21,55 +21,53 @@
 
 <body>
 
-  <div class="menu" ui-view="menu">
-    <menu-bar></menu-bar>
-  </div>
+  <!--<div class="menu" ui-view="menu"></div>-->
 
-  <div class="content" ui-view="content">
-    <country-list></country-list>
-  </div>
+  <div class="content" ui-view="content"></div>
 
 
   <!--Imported Files-->
 
-  <!--Angular-->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
-
-  <!--Angular Materials & Dependencies-->
-  <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>-->
-
-  <!--Angular UI Router-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
-
-
-  <!--Google Maps API-->
-  <script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
+      <!--Angular-->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    
+      <!--Angular Materials & Dependencies-->
+      <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>-->
+    
+      <!--Angular UI Router-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    
+    
+      <!--Google Maps API-->
+      <script src="http://maps.googleapis.com/maps/api/js?&language=en"></script>
 
 
 
   <!--My Files-->
 
-  <!--App-->
-  <script src="app.js"></script>
-
-  <!--Routes-->
-  <script src="routes.js"></script>
-
-  <!--Controllers-->
-  <script src="directives/countryList/countryListCtrl.js"></script>
-  <script src="features/home/homeCtrl.js"></script>
-  <script src="features/map/mapCtrl.js"></script>
-  <script src="directives/menuBar/menuBarCtrl.js"></script>
-  <script src="features/stats/statsCtrl.js"></script>
-
-  <!--Directives-->
-  <script src="directives/countryListDirective.js"></script>
-  <script src="directives/menuBarDirective.js"></script>
-
-  <!--Services-->
-  <script src="services/countriesService.js"></script>
+      <!--App-->
+      <script src="app.js"></script>
+    
+      <!--Routes-->
+      <script src="routes.js"></script>
+    
+      <!--Controllers-->
+      <script src="features/countryList/countryListCtrl.js"></script>
+      <script src="features/home/homeCtrl.js"></script>
+      <script src="features/map/mapCtrl.js"></script>
+      <script src="directives/menuBar/menuBarCtrl.js"></script>
+      <script src="directives/searchMenuBar/searchMenuBarCtrl.js"></script>
+      <script src="features/stats/statsCtrl.js"></script>
+    
+      <!--Directives-->
+      <script src="directives/countryList/countryListDirective.js"></script>
+      <script src="directives/menuBar/menuBarDirective.js"></script>
+      <script src="directives/searchMenuBar/searchMenuBarDirective.js"></script>
+    
+      <!--Services-->
+      <script src="services/countriesService.js"></script>
 
 </body>
 

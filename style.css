@@ -21,7 +21,7 @@ div map {
 
 }
 
-nav ul {
+nav {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -33,13 +33,7 @@ nav ul {
 	align-items: center;
 }
 
-ul {
-	display: flex;
-	flex-direction: row;
-	align-content: space-around;
-}
-
-ul div {
+nav div {
 	width: 30%;
 	text-align: center;
 	border: 2px solid black
@@ -48,6 +42,10 @@ ul div {
 ul span {
 	width: 25%;
 	text-align: center;
+}
+
+.menu-bar {
+	width: 100%;
 }
 
 .countryList {
@@ -88,13 +86,8 @@ a {
 }
 
 #map {
-  height: 550px;
-  width: 95%;
-  box-shadow: 3px 3px 10px gray;
-  float: left;
-  border: 5px solid white;
-  border-radius: 10px;
-  margin-right: 20px;
+  height: 580px;
+  width: 100%;
 }
 
 #repeat {

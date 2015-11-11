@@ -7,12 +7,6 @@ angular.module("travelTracker")
 			.state("home", {
 				url: "/",
 				views: {
-					
-					"menu": {
-						templateUrl: "directives/menuBar/menuBarTemp.html",
-						controller: "menuBarCtrl"
-					},
-					
 					"content": {
 						templateUrl: "features/home/home.html",
 						controller: "homeCtrl"
@@ -20,22 +14,17 @@ angular.module("travelTracker")
 				}
 			})
 			
-			//Test
+		
 			.state("region", {
-				url: "/region/:cont",
+				url: "/region/:region",
 				
 				views: {
-					"menu": {
-						templateUrl: "directives/menuBar/menuBarTemp.html",
-						controller: "menuBarCtrl"
-					},
-					
 					"content": {
-						templateUrl: "directives/countryList/countryListTemp.html",
+						templateUrl: "features/countryList/countryList.html",
 						controller: "countryListCtrl",
 						resolve: {
 							continent: function (countriesService, $stateParams) {
-							return countriesService.getNewCountries($stateParams.cont);	
+							return countriesService.getNewCountries($stateParams.region);	
 							}
 						}
 					}		
@@ -46,29 +35,17 @@ angular.module("travelTracker")
 			.state("map", {
 				url: "/map",
 				views: {
-					"menu": {
-						templateUrl: "directives/menuBar/menuBarTemp.html",
-						controller: "menuBarCtrl"
-					},
-					
 					"content": {
 						templateUrl: "features/map/map.html",
 						controller: "mapCtrl"
-						
 					}		
 				},
-					
 			})
 			
 			
 			.state("stats", {
 				url: "/stats",
 				views: {
-					"menu": {
-						templateUrl: "directives/menuBar/menuBarTemp.html",
-						controller: "menuBarCtrl"
-					},
-					
 					"content": {
 						templateUrl: "features/stats/stats.html",
 						controller: "statsCtrl"
