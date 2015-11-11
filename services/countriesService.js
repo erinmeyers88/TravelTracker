@@ -20,6 +20,23 @@ angular.module("travelTracker").service("countriesService", function ($http, $q)
 
 	// });
 
+
+
+this.getNewCountries = function (continent) {
+	console.log(continent);
+		return $http({
+			method: "GET",
+			url: "https://restcountries.eu/rest/v1/region/" + continent
+		}).then(function (responseFromCall) {
+			return responseFromCall.data;
+		});
+	};
+
+
+
+
+
+
 	this.getAfrica = function () {
 		return $http({
 			method: "GET",
@@ -87,7 +104,6 @@ angular.module("travelTracker").service("countriesService", function ($http, $q)
 					lng: country.latlng[1]
 				}
 			);
-			console.log(this.visitedCoordinates);
 		}
 
 		else {
@@ -95,10 +111,7 @@ angular.module("travelTracker").service("countriesService", function ($http, $q)
 			this.visitedCoordinates.splice(this.visitedCoordinates.indexOf(country), 1);
 		}
 	};
-	// return this.visitedCountries
-		
-
-	//Visited Coordinates
 
 	
+
 });

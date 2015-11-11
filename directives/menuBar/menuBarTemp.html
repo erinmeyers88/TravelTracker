@@ -3,6 +3,11 @@
 		<div>
 				<select ng-model="selectedRegion" ng-options="region for region in regions" ng-change="onChange(selectedRegion)">
 				</select>
+				
+				
+				<a ui-sref="continents({cont:'Africa'})">Africa</a>
+				
+				
 		</div>
 		<div ui-sref="stats">Travel Stats</div>
 		<div ui-sref="map">Map</div>

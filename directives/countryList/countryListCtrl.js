@@ -1,12 +1,10 @@
 angular.module("travelTracker")
-	.controller("africaCtrl", function ($scope, countriesService) {
+	.controller("countryListCtrl", function ($scope, countriesService, continent) {
 
-		$scope.getCountries = function () {
+		console.log("my region is ", $scope.selectedRegion);
 
-			countriesService.getAfrica().then(function (result) {
-				$scope.region = result;
-			});
-		} ();
+//Puts the continent parameter that you pass in on $scope as $scope.region
+		$scope.region = continent;
 
 		$scope.updateVisitedOrNot = function (country, visitedOrNot) {
 			countriesService.updateVisitedOrNot(country, visitedOrNot);
@@ -19,7 +17,6 @@ angular.module("travelTracker")
 				return true;
 			}
 		};
-
 
 
 		$scope.collapse = function (country) {

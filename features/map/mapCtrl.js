@@ -15,14 +15,14 @@ angular.module("travelTracker")
 
     var infoWindow = new google.maps.InfoWindow();
 
-    var createMarker = function (lat, lng) {
+    var createMarker = function (lat, lng, title) {
 
       var marker = new google.maps.Marker({
         map: $scope.map,
         position: new google.maps.LatLng(lat, lng),
-        // title: info.city
+        title: title
       });
-      // marker.content = '<div class="infoWindowContent">' + info.desc + '</div>';
+      marker.content = '<div class="infoWindowContent">' + title + '</div>';
 
       google.maps.event.addListener(marker, 'click', function () {
         infoWindow.setContent('<h2>' + marker.title + '</h2>' + marker.content);
@@ -34,7 +34,7 @@ angular.module("travelTracker")
     }
 
     for (i = 0; i < $scope.visitedCoordinates.length; i++) {
-      createMarker($scope.visitedCoordinates[i].lat, $scope.visitedCoordinates[i].lng);
+      createMarker($scope.visitedCoordinates[i].lat, $scope.visitedCoordinates[i].lng, $scope.visitedCoordinates[i].country);
     }
 
     $scope.openInfoWindow = function (e, selectedMarker) {
