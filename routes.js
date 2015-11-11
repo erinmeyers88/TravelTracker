@@ -16,7 +16,7 @@ angular.module("travelTracker")
 			
 		
 			.state("region", {
-				url: "/region/:region",
+				url: "/regions/:region",
 				
 				views: {
 					"content": {

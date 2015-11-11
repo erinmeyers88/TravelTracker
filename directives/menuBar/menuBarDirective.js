@@ -3,7 +3,16 @@ angular.module("travelTracker")
 
 		return {
 			templateUrl: "directives/menuBar/menuBarTemp.html",
-			controller: "menuBarCtrl"
-		};
 
+			controller: function ($scope, $state, $location) {
+				
+
+				$scope.regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
+				
+				$scope.onChange = function (region) {
+					$location.path("/regions/" + region);
+				};
+				
+			}
+		};
 	});
